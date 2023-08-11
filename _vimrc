@@ -2,7 +2,7 @@ set nocompatible
 
 set background=dark
 syntax on
-filetype plugin indent on
+filetype plugin on
 set foldmethod=syntax
 
 " True color
@@ -22,13 +22,14 @@ set number                          " Show line numbers
 set expandtab                       " Use space instead of tab
 set shiftwidth=4                    " indent 2
 set tabstop=4                       " Tab stop 2 idk reall ww
-set softtabstop=2
+set softtabstop=4
 set autoindent                      " Does what it says
 set nowrap                          " Dont wrap text
 set guioptions -=T                  " Dont show toolbar
 
 set laststatus=2                    " For lightline plugin
 set noshowmode                      " For lightline plugin, disables mode display
+nnoremap <F5> :exec 'NERDTreeToggle' <CR>
 let g:tokyonight_style = 'night'
 let g:tokyonight_enable_italic = 1
 let g:lightline = {'colorscheme': 'tokyonight'}
@@ -90,15 +91,6 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 
 call plug#begin("$HOME/vimfiles/plugged")
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
-
-" Make sure you use single quotes
 
 Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
@@ -106,13 +98,8 @@ Plug 'maximbaz/lightline-ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'voldikss/vim-codelf'
+Plug 'preservim/nerdtree'
 
-" Initialize plugin system
-" - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
-" You can revert the settings after the call like so:
-"   filetype indent off   " Disable file-type-specific indentation
-"   syntax off         
 
 colorscheme tokyonight                    " Its here incase of transparent lightline
