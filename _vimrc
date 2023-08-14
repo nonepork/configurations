@@ -59,9 +59,6 @@ let g:lightline.active = {
 let g:ale_linters = {
 \     'python': ['ruff'],
 \}
-let g:ale_fixers = {
-\     'json': ['prettier'],
-\}
 
 set backspace=indent,eol,start            " Make backspace works with prewritten text
 set encoding=utf-8                        " Set encoding to utf-8
@@ -90,16 +87,34 @@ function! InsertTabWrapper()
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 
-call plug#begin("$HOME/vimfiles/plugged")
+" Disable plugin when file too large
+if getfsize(expand('%')) > 400000
+    set nocp
+    silent! PlugClean!
 
-Plug 'dense-analysis/ale'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'sheerun/vim-polyglot'
-Plug 'alvan/vim-closetag'
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'preservim/nerdtree'
+    call plug#begin("$HOME/vimfiles/plugged")
 
-call plug#end()
+    Plug 'dense-analysis/ale' , {'on': []}
+    Plug 'maximbaz/lightline-ale' , {'on': []}
+    Plug 'itchyny/lightline.vim' , {'on': []}
+    Plug 'sheerun/vim-polyglot' , {'on': []}
+    Plug 'alvan/vim-closetag' ", {'on': []}
+    Plug 'ghifarit53/tokyonight-vim'
+    Plug 'preservim/nerdtree' , {'on': []} 
+
+    call plug#end()
+else
+    call plug#begin("$HOME/vimfiles/plugged")
+
+    Plug 'dense-analysis/ale' ", {'on': []}
+    Plug 'maximbaz/lightline-ale' ", {'on': []}
+    Plug 'itchyny/lightline.vim' ", {'on': []}
+    Plug 'sheerun/vim-polyglot' ", {'on': []}
+    Plug 'alvan/vim-closetag' ", {'on': []}
+    Plug 'ghifarit53/tokyonight-vim'
+    Plug 'preservim/nerdtree' ", {'on': []} 
+
+    call plug#end()
+endif
 
 colorscheme tokyonight                    " Its here incase of transparent lightline
