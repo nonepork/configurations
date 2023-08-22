@@ -29,9 +29,10 @@ set guioptions -=T                  " Dont show toolbar
 
 set laststatus=2                    " For lightline plugin
 set noshowmode                      " For lightline plugin, disables mode display
-nnoremap <F5> :exec 'NERDTreeToggle' <CR>
+
 let g:tokyonight_style = 'night'
 let g:tokyonight_enable_italic = 1
+
 let g:lightline = {'colorscheme': 'tokyonight'}
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
@@ -56,6 +57,7 @@ let g:lightline.active = {
 	    \            [ 'percent' ],
 	    \            [ 'fileformat', 'fileencoding', 'filetype'] ] }
 
+
 let g:ale_linters = {
 \     'python': ['ruff'],
 \}
@@ -73,6 +75,14 @@ nmap k gk
 set incsearch                             " Search as characters are entered
 set hlsearch                              " Highlight matches
 
+nnoremap <F5> :exec 'NERDTreeToggle' <CR>
+
+
+
+" Custom scripts, Plugins load below
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -86,6 +96,19 @@ function! InsertTabWrapper()
     endif
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
+
+
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+endfunction
+
+set list listchars=trail:.,extends:>
+autocmd FileWritePre * call TrimWhiteSpace()
+autocmd FileAppendPre * call TrimWhiteSpace()
+autocmd FilterWritePre * call TrimWhiteSpace()
+autocmd BufWritePre * call TrimWhiteSpace()
 
 " Disable plugin when file too large
 if getfsize(expand('%')) > 400000
