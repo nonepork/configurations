@@ -27,6 +27,11 @@ set autoindent                      " Does what it says
 set nowrap                          " Dont wrap text
 set guioptions -=T                  " Dont show toolbar
 
+set backup                                " Turn on backup
+set writebackup                           " Make backup before overwriting the current buffer
+set backupcopy=yes                        " Overwrite the original backup file
+set backupext=.bak
+
 set laststatus=2                    " For lightline plugin
 set noshowmode                      " For lightline plugin, disables mode display
 
@@ -98,17 +103,8 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 
 
-" Removes trailing spaces
-function TrimWhiteSpace()
-  %s/\s*$//
-  ''
-endfunction
-
-set list listchars=trail:.,extends:>
-autocmd FileWritePre * call TrimWhiteSpace()
-autocmd FileAppendPre * call TrimWhiteSpace()
-autocmd FilterWritePre * call TrimWhiteSpace()
-autocmd BufWritePre * call TrimWhiteSpace()
+" Shows trailing spaces
+set list listchars=tab:»·,trail:·
 
 " Disable plugin when file too large
 if getfsize(expand('%')) > 400000
@@ -123,7 +119,7 @@ if getfsize(expand('%')) > 400000
     Plug 'sheerun/vim-polyglot' , {'on': []}
     Plug 'alvan/vim-closetag' ", {'on': []}
     Plug 'ghifarit53/tokyonight-vim'
-    Plug 'preservim/nerdtree' , {'on': []} 
+    Plug 'preservim/nerdtree' , {'on': []}
 
     call plug#end()
 else
@@ -135,7 +131,7 @@ else
     Plug 'sheerun/vim-polyglot' ", {'on': []}
     Plug 'alvan/vim-closetag' ", {'on': []}
     Plug 'ghifarit53/tokyonight-vim'
-    Plug 'preservim/nerdtree' ", {'on': []} 
+    Plug 'preservim/nerdtree' ", {'on': []}
 
     call plug#end()
 endif
