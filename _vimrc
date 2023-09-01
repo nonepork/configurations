@@ -72,6 +72,9 @@ set encoding=utf-8                        " Set encoding to utf-8
 set mouse=a                               " Enable mouse support
 set ruler                                 " Show line and column because its cool
 set guifont=Victor\ Mono:h12
+set renderoptions=type:directx,
+    \gamma:1.5,contrast:0.5,geom:1,
+    \renmode:5,taamode:1,level:0.5
 
 " Move vertically by visual line (don't skip wrapped lines)
 nmap j gj
