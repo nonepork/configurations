@@ -79,6 +79,8 @@ set renderoptions=type:directx,
 " Move vertically by visual line (don't skip wrapped lines)
 nmap j gj
 nmap k gk
+" Don't overwrite clipboard when pasting on text
+vnoremap p "_dP
 
 set incsearch                             " Search as characters are entered
 set hlsearch                              " Highlight matches
