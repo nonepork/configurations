@@ -46,4 +46,4 @@ vim.opt.smartcase = true          -- Unless there is capital letter in it
 vim.opt.updatetime = 50           -- Updatetime
 
 vim.opt.termguicolors = true      -- Colors
-vim.opt.guifont = "JetBrainsMono NFM:h12" -- Font, really long 'cuz the og one didn't work
+vim.opt.guifont = "VictorMono Nerd Font Mono:h12" -- Font, really long 'cuz the og one didn't work
