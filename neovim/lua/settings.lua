@@ -47,3 +47,12 @@ vim.opt.updatetime = 50           -- Updatetime
 
 vim.opt.termguicolors = true      -- Colors
 vim.opt.guifont = "VictorMono Nerd Font Mono:h12" -- Font, really long 'cuz the og one didn't work
+
+vim.opt.listchars = {
+  tab = '▷-',
+  trail = '·',
+  extends = '◣',
+  precedes = '◢',
+  nbsp = '○'
+}
+vim.opt.list = true
