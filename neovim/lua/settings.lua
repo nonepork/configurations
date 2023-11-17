@@ -15,9 +15,9 @@ vim.opt.clipboard = "unnamedplus" -- Uses the clipboard register for all operati
 vim.opt.syntax = "on"             -- Enable syntax highlight stuff
 
 vim.opt.smartindent = true        -- Let vim decides when to indent, when not to.
-vim.opt.tabstop = 2               -- Number of spaces that a <Tab> in the file counts for.
-vim.opt.softtabstop = 2           -- I dont know what this is to be honest, tell me if you know :)
-vim.opt.shiftwidth = 2            -- Number of spaces to use for each step of (auto)indent.
+vim.opt.tabstop = 4               -- Number of spaces that a <Tab> in the file counts for.
+vim.opt.softtabstop = 4           -- I dont know what this is to be honest, tell me if you know :)
+vim.opt.shiftwidth = 4            -- Number of spaces to use for each step of (auto)indent.
 vim.opt.expandtab = true          -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 
 vim.opt.encoding = "utf-8"        -- Sets the character encoding used inside Vim.
