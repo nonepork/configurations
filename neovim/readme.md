@@ -14,3 +14,6 @@ https://github.com/nvim-lua/kickstart.nvim
 
 How to Set up Neovim for Windows and Linux with Lua and Packer  
 https://dev.to/slydragonn/how-to-set-up-neovim-for-windows-and-linux-with-lua-and-packer-2391
+
+Emoji on lsp error:  
+https://stackoverflow.com/questions/76453010/neovim-using-patched-nerdfont-but-icon-not-working
