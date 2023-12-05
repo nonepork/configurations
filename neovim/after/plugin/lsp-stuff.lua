@@ -36,25 +36,44 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 cmp.setup({
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
       { name = "luasnip" },
       { name = "path" },
-    }, {
       { name = "buffer" },
     }),
     mapping = cmp.mapping.preset.insert({
-    -- Enter key confirms completion item
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-
-    -- Ctrl + space triggers completion menu
-    ['<C-Space>'] = cmp.mapping.complete(),
+        -- Enter key confirms completion item
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<Tab>'] = cmp.mapping(function (fallback)
+            if luasnip.expandable() then
+                luasnip.expand()
+            elseif cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.jumpable(1) then
+                luasnip.jump(1)
+            elseif vim.api.nvim_get_mode().mode == 'i' then
+                tabout.tabout()
+            else
+                fallback()
+            end
+        end, {'i', 's'}),
+        ['<S-Tab>'] = cmp.mapping(function (fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, {'i', 's'})
     }),
     snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
+        expand = function(args)
+          require('luasnip').lsp_expand(args.body)
+        end,
     },
 })
