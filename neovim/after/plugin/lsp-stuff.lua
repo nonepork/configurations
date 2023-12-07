@@ -55,8 +55,6 @@ cmp.setup({
                 cmp.select_next_item()
             elseif luasnip.jumpable(1) then
                 luasnip.jump(1)
-            elseif vim.api.nvim_get_mode().mode == 'i' then
-                tabout.tabout()
             else
                 fallback()
             end
