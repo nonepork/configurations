@@ -11,5 +11,5 @@ return {
     end,},
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
-    { "folke/neodev.nvim", opts = {} },
+    {'folke/neodev.nvim'}
 }

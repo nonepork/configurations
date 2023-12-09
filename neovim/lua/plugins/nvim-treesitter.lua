@@ -19,6 +19,7 @@ return {
                              "python",
                              "regex",
                              "bash",
+                             "go",
                              "markdown",
                              "markdown_inline"},
         sync_install = false,

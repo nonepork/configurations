@@ -46,10 +46,7 @@ vim.opt.smartcase = true          -- Unless there is capital letter in it
 vim.opt.updatetime = 50           -- Updatetime
 
 vim.opt.termguicolors = true      -- Colors
---vim.opt.guifont = "VictorMono Nerd Font Mono:h12"
--- Here's the thing, type this in terminal:nvim-qt -- -u NONE
--- then :Guifont! "Your desired font that is not supported by nvim-qt:h12"
--- This will make your font works even neovim is reporting error
+-- vim.opt.guifont = "VictorMono Nerd Font Mono:h12"
 
 vim.opt.listchars = {
   tab = '▷-',
