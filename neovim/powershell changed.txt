@@ -1,7 +1,7 @@
 Changed settings:
-Enable: Use Acrylic material in the tab row
-Enable: acrylic material 50%
+Enable: acrylic material 60%
 Changed: Font from CaskaydiaCove NerdFontMono to Jetbrains NerdFontMono
+Changed: Font weight to medium
 Removed: Paste Ctrl+V hotkey
 
 Cuz I don't know where my powershell and terminal config is. (Tell me if you can :p)
