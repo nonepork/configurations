@@ -6,9 +6,10 @@ return {
     {'saadparwaiz1/cmp_luasnip'},
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip',
-    keys = function()
-        return {}
-    end,},
+        keys = function()
+            return {}
+        end,
+    },
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
     {'folke/neodev.nvim'}
