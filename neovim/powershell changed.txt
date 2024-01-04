@@ -8,3 +8,4 @@ Cuz I don't know where my powershell and terminal config is. (Tell me if you can
 
 just for todo stuff
 https://github.com/numToStr/Comment.nvim
+https://github.com/sownteedev/TeVim
