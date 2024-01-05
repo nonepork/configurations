@@ -37,3 +37,7 @@ require'nvim-treesitter.configs'.setup {
         end,
     },
 }
+
+require("nvim-highlight-colors").setup({
+    render = 'background'
+})
