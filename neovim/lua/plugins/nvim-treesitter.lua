@@ -4,6 +4,6 @@ return {
     build = ":TSUpdate",
     dependencies = {
         "HiPhish/rainbow-delimiters.nvim",
-        "norcalli/nvim-colorizer.lua"
+        "brenoprata10/nvim-highlight-colors"
     }
 }
