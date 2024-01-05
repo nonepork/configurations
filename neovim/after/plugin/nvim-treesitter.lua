@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c",
+    -- A list of parser names, or "all" (the five listed parsers should always be installed)
+    ensure_installed = { "c",
                        "c_sharp",
                        "cpp",
                        "lua",
@@ -18,11 +18,11 @@ require'nvim-treesitter.configs'.setup {
                        "markdown",
                        "markdown_inline"},
 
-  sync_install = false,
+    sync_install = false,
 
-  indent = { enable = true },
+    indent = { enable = true },
 
-  highlight = {
+    highlight = {
     enable = true,
 
     disable = function(lang, buf)
@@ -34,5 +34,5 @@ require'nvim-treesitter.configs'.setup {
         end
     end,
 
-  },
+    },
 }

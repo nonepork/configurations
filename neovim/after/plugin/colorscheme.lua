@@ -1,8 +1,8 @@
 require("nightfox").setup({
-  options = {
-    transparent = true,
-    terminal_colors = false,
-  }
+    options = {
+        transparent = true,
+        terminal_colors = false,
+    }
 })
 
 vim.cmd[[colorscheme carbonfox]]
