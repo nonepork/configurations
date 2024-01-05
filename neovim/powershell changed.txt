@@ -5,6 +5,3 @@ Changed: Font weight to medium
 Removed: Paste Ctrl+V hotkey
 
 Cuz I don't know where my powershell and terminal config is. (Tell me if you can :p)
-
-just for todo stuff
-https://github.com/sownteedev/TeVim
