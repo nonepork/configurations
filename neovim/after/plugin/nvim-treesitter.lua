@@ -12,13 +12,13 @@ require("rainbow-delimiters.setup").setup({
     },
 })
 
-vim.cmd([[highlight RainbowDelimiterRed guifg=#FFADAD]])
-vim.cmd([[highlight RainbowDelimiterYellow guifg=#FFD6A5]])
-vim.cmd([[highlight RainbowDelimiterBlue guifg=#FDFFB6]])
-vim.cmd([[highlight RainbowDelimiterOrange guifg=#CAFFBF]])
-vim.cmd([[highlight RainbowDelimiterGreen guifg=#9BF6FF]])
-vim.cmd([[highlight RainbowDelimiterViolet guifg=#A0C4FF]])
-vim.cmd([[highlight RainbowDelimiterCyan guifg=#BDB2FF]])
+vim.cmd([[highlight RainbowDelimiterRed guifg=#B33D26]])
+vim.cmd([[highlight RainbowDelimiterYellow guifg=#DE754C]])
+vim.cmd([[highlight RainbowDelimiterBlue guifg=#DDA46F]])
+vim.cmd([[highlight RainbowDelimiterOrange guifg=#789F90]])
+vim.cmd([[highlight RainbowDelimiterGreen guifg=#387F97]])
+vim.cmd([[highlight RainbowDelimiterViolet guifg=#236192]])
+vim.cmd([[highlight RainbowDelimiterCyan guifg=#702670]])
 
 require("nvim-highlight-colors").setup({
     render = 'background'
