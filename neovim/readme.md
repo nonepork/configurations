@@ -14,3 +14,8 @@ https://github.com/nvim-lua/kickstart.nvim
 
 How to Set up Neovim for Windows and Linux with Lua and Packer  
 https://dev.to/slydragonn/how-to-set-up-neovim-for-windows-and-linux-with-lua-and-packer-2391
+
+Lualine:
+https://www.reddit.com/r/vimporn/comments/15h3e14/miasmanvim_lots_of_dotsfiles_updates/
+
+I forgot to put some inspiration in here, sry :p
