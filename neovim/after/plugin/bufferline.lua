@@ -3,7 +3,7 @@ require("bufferline").setup {
     options = {
         diagnostics = "nvim_lsp",
         offsets = {{
-            text = "File Tree",
+            text = "",
             filetype = "NvimTree",
             highlight = "Directory",
         }}

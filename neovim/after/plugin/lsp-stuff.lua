@@ -59,6 +59,9 @@ local config = {
 
 vim.diagnostic.config(config)
 
+vim.cmd([[hi DiagnosticVirtualTextWarn guifg=#e0af68]])
+vim.cmd([[hi DiagnosticWarn guifg=#e0af68]])
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {},
