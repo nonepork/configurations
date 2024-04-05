@@ -21,7 +21,7 @@ vim.cmd([[highlight RainbowDelimiterViolet guifg=#236192]])
 vim.cmd([[highlight RainbowDelimiterCyan guifg=#702670]])
 
 require("nvim-highlight-colors").setup({
-    render = 'background'
+    render = 'virtual'
 })
 
 require'nvim-treesitter.configs'.setup {
