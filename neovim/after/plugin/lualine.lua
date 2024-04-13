@@ -14,7 +14,7 @@ local config = {
     options = {
         theme = custom_horizon,
         component_separators = "",
-        disabled_filetypes = {'NvimTree'},
+        disabled_filetypes = {'NvimTree', 'undotree', 'diffpanel_3'},
     }
 }
 
