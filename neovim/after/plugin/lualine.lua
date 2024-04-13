@@ -15,6 +15,7 @@ local config = {
         theme = custom_horizon,
         component_separators = "",
         section_separators = { left = "", right = "" },
+        disabled_filetypes = {'NvimTree'},
     }
 }
 
