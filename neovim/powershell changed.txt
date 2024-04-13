@@ -1,7 +1,0 @@
-Changed settings:
-    Opacity        90%
-    Font           CaskaydiaCove NerdFontMono -> Jetbrains NerdFontMono
-    Font weight -> Semi-Bold
-    Hotkey Ctrl+V  Paste -> None
-
-Cuz I don't know where my powershell and terminal config is. (Tell me if you know where it is, im lazy :p)
