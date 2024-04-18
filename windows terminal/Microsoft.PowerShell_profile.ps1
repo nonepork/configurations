@@ -24,3 +24,6 @@ $env:PYTHONIOENCODING='utf-8'
 function clearch() {
     Remove-Item -path (Get-PSReadlineOption).HistorySavePath
 }
+
+# For you
+New-Alias -Name vim -Value nvim
