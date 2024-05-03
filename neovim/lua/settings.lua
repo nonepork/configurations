@@ -52,7 +52,6 @@ vim.opt.listchars = {
   tab = '▷-',
   trail = '·',
   extends = '◣',
-  precedes = '◢',
   nbsp = '○'
 }
 vim.opt.list = true
