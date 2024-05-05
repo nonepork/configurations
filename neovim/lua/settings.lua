@@ -9,6 +9,7 @@ vim.g.maplocalleader = " "
 -- Editor options
 
 vim.opt.number = true             -- Line number in front of each line
+vim.opt.relativenumber = true     -- I didn't know you could (relativelinenumber) + j or k
 
 vim.opt.clipboard = "unnamedplus" -- Uses the clipboard register for all operations except yank.
 
@@ -25,7 +26,7 @@ vim.opt.fileencoding = "utf-8"    -- Sets the character encoding for the file of
 
 vim.opt.wrap = false              -- Disable wrap lines
 
-vim.opt.hlsearch = true           -- Set don't highlight on search
+vim.opt.hlsearch = true           -- Don't highlight on search
 vim.opt.incsearch = true          -- Like regex but for vim
 
 vim.opt.scrolloff = 8             -- Pretty cool feature that don't let you lost in the world of code
@@ -55,3 +56,6 @@ vim.opt.listchars = {
   nbsp = '○'
 }
 vim.opt.list = true
+
+-- Don't left netrw open a buffer after opening a file. For bufferline
+vim.g.netrw_fastbrowse = 0
