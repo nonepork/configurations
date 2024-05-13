@@ -20,13 +20,16 @@ map({"n", "v"}, "d", [["_d]])
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "Find & Replace all current word" })
 
--- nvimtree
+-- nvimgrass
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
--- tabufline
+-- tabufufufu
 map("n", "<S-c>", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "buffer close" })
+
+-- telephone
+map("n", "<leader>fg", "<cmd> Telescope live_grep<CR>", { desc = "telescope live grep" })
 
 ----------------------------
 
@@ -44,3 +47,4 @@ nomap({"n", "t"}, "<A-i>")
 nomap("i", "<C-b>")
 nomap("i", "<End>")
 nomap("n", "<leader>x")
+nomap("n", "<leader>fw")
