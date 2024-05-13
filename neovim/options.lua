@@ -10,7 +10,10 @@ opt.clipboard = "unnamedplus" -- Uses the clipboard register for all operations 
 opt.syntax = "on"             -- Enable syntax highlight stuff
 
 opt.smartindent = true        -- Let vim decides when to indent, when not to.
-opt.expandtab = true          -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
+vim.opt.tabstop = 4           -- Number of spaces that a <Tab> in the file counts for.
+vim.opt.softtabstop = 4       -- Soft tab stop, yeah
+vim.opt.shiftwidth = 4        -- Number of spaces to use for each step of (auto)indent.
+opt.expandtab = true          -- Use space instead of tabs
 
 opt.encoding = "utf-8"        -- Sets the character encoding used inside Vim.
 opt.fileencoding = "utf-8"    -- Sets the character encoding for the file of this buffer.
@@ -55,3 +58,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   }
 }
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "html",
+  command = "setlocal shiftwidth=4 tabstop=4"
+})
