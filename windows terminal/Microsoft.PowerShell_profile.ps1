@@ -28,4 +28,4 @@ function clearch() {
 # For you
 New-Alias -Name vim -Value nvim
 
-$projects = 'D:\Projects'
+$projects = 'D:\Projects\_Current Working'
