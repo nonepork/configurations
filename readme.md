@@ -1,3 +1,3 @@
-# my_vim_config
+# CONFIGURATIONS
 
 My configurations for cool tech stuff.
