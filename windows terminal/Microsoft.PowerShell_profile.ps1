@@ -1,5 +1,5 @@
 #oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/emodipt-extend-transient.omp.json" | Invoke-Expression
-$omp_file = Join-Path $PSScriptRoot "./themes/minimalNight.omp.json"
+$omp_file = Join-Path $PSScriptRoot "./themes/amro.omp.json"
 oh-my-posh init pwsh --config $omp_file | Invoke-Expression
 
 # Import the Chocolatey Profile that contains the necessary code to enable
@@ -15,6 +15,8 @@ if (Test-Path($ChocolateyProfile)) {
 # Let powershell use utf8 as encoding instead of utf16le
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 
+Import-Module -Name Terminal-Icons
+
 function weather() {
     Invoke-RestMethod https://wttr.in/Taiwan?0
 }
@@ -28,4 +30,6 @@ function clearch() {
 # For you
 New-Alias -Name vim -Value nvim
 
-$projects = 'D:\Projects\_Current Working'
+function project() {
+    Get-ChildItem 'D:\Projects\_Current Working' -Attributes Directory | Invoke-Fzf | Set-Location
+}
