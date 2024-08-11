@@ -59,7 +59,7 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "html",
-  command = "setlocal shiftwidth=4 tabstop=4"
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "html",
+--   command = "setlocal shiftwidth=4 tabstop=4"
+-- })
