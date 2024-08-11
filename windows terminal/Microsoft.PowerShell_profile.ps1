@@ -30,6 +30,7 @@ function clearch() {
 # For you
 New-Alias -Name vim -Value nvim
 
-function project() {
-    Get-ChildItem 'D:\Projects\_Current Working' -Attributes Directory | Invoke-Fzf | Set-Location
-}
+# uncomment this if you're using powershell 7
+# function project() {
+#    Get-ChildItem 'D:\Projects\_Current Working' -Attributes Directory | Invoke-Fzf | Set-Location
+# }
