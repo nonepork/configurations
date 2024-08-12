@@ -9,6 +9,9 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     opts = {
       ensure_installed = {
         "c",
@@ -48,11 +51,5 @@ return {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "windwp/nvim-ts-autotag"
-    },
-  },
 }
+

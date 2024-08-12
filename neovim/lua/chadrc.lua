@@ -7,7 +7,7 @@ local M = {}
 M.ui = {
   ------------------------------- base46 -------------------------------------
   -- hl = highlights
-	theme = "ashes",
+	theme = "everblush",
 	hl_override = {
 		Comment = { italic = true },
 		["@comment"] = { italic = true },
