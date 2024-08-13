@@ -1,7 +1,6 @@
 # gvim
 
 No preview for this one cause I'm lazy xD.
---
 
 My vimrc for gvim, an absolute mess :)
 

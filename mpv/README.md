@@ -1,6 +1,6 @@
 # mpv
 
-It's basically uosc with some modifications.
+It's basically uosc with some modifications, so no preview.
 
 ### Modifications:
 - Keep open after video ends
