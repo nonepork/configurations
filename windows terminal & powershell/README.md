@@ -1,5 +1,7 @@
 # windows terminal / powershell
 
+![](preview.png)
+
 ### Modifications:
 - Some settings
 - Nerdfont
