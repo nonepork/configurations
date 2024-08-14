@@ -7,6 +7,7 @@
 - Nerdfont
 - Oh my posh
 - PSFzf
+ripgrep is godlike
 - PSReadline
 - Terminal-Icons
 - Custom commands
