@@ -1,5 +1,5 @@
--- This file  needs to have same structure as nvconfig.lua 
--- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
 
 ---@type ChadrcConfig
 local M = {}
@@ -7,11 +7,11 @@ local M = {}
 M.ui = {
   ------------------------------- base46 -------------------------------------
   -- hl = highlights
-	theme = "everblush",
-	hl_override = {
-		Comment = { italic = true },
-		["@comment"] = { italic = true },
-	},
+  theme = "everblush",
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 
   cmp = {
     icons = true,
@@ -23,7 +23,7 @@ M.ui = {
 
   ------------------------------- nvchad_ui modules -----------------------------
   statusline = {
-    theme = "minimal"
+    theme = "minimal",
   },
 
   -- lazyload it when there are 1+ buffers
