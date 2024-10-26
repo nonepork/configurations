@@ -4,7 +4,7 @@
 
 local options = {
   base46 = {
-    theme = "everblush", -- default theme
+    theme = "catppuccin", -- default theme
     hl_override = {
       Comment = { italic = true },
       ["@comment"] = { italic = true },

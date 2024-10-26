@@ -48,4 +48,25 @@ return {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
+
+  {
+    "ellisonleao/carbon-now.nvim",
+    lazy = true,
+    cmd = "CarbonNow",
+    config = function()
+      require("carbon-now").setup({
+        options = {
+          bg = "gray",
+          titlebar = "",
+          theme = "one-dark",
+          font_family = "JetBrains+Mono",
+          font_size = "20px",
+          watermark = false,
+          drop_shadow = true,
+          padding_horizontal = "50px",
+          padding_vertical = "50px",
+        }
+      })
+    end,
+  },
 }

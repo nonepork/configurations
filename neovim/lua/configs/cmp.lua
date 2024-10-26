@@ -2,6 +2,8 @@ local configs = require "nvchad.configs.cmp"
 
 local cmp = require "cmp"
 
+require("luasnip.loaders.from_vscode").load()
+
 -- configs.options.mapping = {
 --   ["<CR>"] = cmp.mapping.confirm {
 --     behavior = cmp.ConfirmBehavior.Insert,
