@@ -17,10 +17,12 @@ config.window_decorations = 'TITLE | RESIZE'
 
 config.default_cursor_style = 'BlinkingBar'
 config.animation_fps = 1
-config.cursor_blink_rate = 600
+config.cursor_blink_rate = 550
 
 config.front_end = 'WebGpu'
-config.max_fps = 120
+config.max_fps = 144
+
+config.term = "xterm-256color"
 
 -- tmux like settings
 --https://www.youtube.com/watch?v=V1X4WQTaxrc
