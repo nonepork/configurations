@@ -71,6 +71,12 @@ return {
   },
 
   {
+    "folke/todo-comments.nvim",
+    lazy = true,
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  {
     "iamcco/markdown-preview.nvim",
     lazy = true,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
