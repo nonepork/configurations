@@ -8,8 +8,10 @@ local config = wezterm.config_builder()
 
 config.default_prog = { 'pwsh.exe', '-NoLogo' }
 config.color_scheme = 'Catppuccin Mocha'
-config.font = wezterm.font('JetBrainsMono Nerd Font')
-config.font_size = 11
+-- config.font = wezterm.font('JetBrainsMono Nerd Font')
+config.font = wezterm.font('Iosevka Nerd Font')
+config.font_size = 12
+config.cell_width = 1
 
 -- config.enable_tab_bar = false
 
@@ -19,13 +21,15 @@ config.default_cursor_style = 'BlinkingBar'
 config.animation_fps = 1
 config.cursor_blink_rate = 550
 
+-- config.front_end = 'WebGpu'
 config.front_end = 'WebGpu'
 config.max_fps = 144
 
-config.term = "xterm-256color"
+config.term = 'xterm-256color'
 
--- tmux like settings
---https://www.youtube.com/watch?v=V1X4WQTaxrc
+-- Tmux like settings
+-- https://www.youtube.com/watch?v=V1X4WQTaxrc
+
 config.leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 2001 }
 config.keys = {
     {
@@ -109,13 +113,15 @@ for i = 0, 9 do
     })
 end
 
--- tab bar
+-- Tab bar
+
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.tab_and_split_indices_are_zero_based = true
 
--- tmux status
+-- Tmux status
+
 wezterm.on('update-right-status', function(window, _)
     local SOLID_LEFT_ARROW = ''
     local ARROW_FOREGROUND = { Foreground = { Color = '#c6a0f6' } }
