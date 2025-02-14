@@ -22,7 +22,7 @@ local options = {
 
     ------------------------------- nvchad_ui modules -----------------------------
     statusline = {
-      theme = "minimal",
+      theme = "vscode_colored",
     },
 
     -- lazyload it when there are 1+ buffers
