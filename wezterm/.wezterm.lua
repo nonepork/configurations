@@ -8,7 +8,6 @@ local config = wezterm.config_builder()
 
 config.default_prog = { 'pwsh.exe', '-NoLogo' }
 config.color_scheme = 'Catppuccin Mocha'
--- config.font = wezterm.font('JetBrainsMono Nerd Font')
 config.font = wezterm.font('Iosevka Nerd Font')
 config.font_size = 12
 config.cell_width = 1
@@ -21,9 +20,8 @@ config.default_cursor_style = 'BlinkingBar'
 config.animation_fps = 1
 config.cursor_blink_rate = 550
 
--- config.front_end = 'WebGpu'
 config.front_end = 'WebGpu'
-config.max_fps = 144
+config.max_fps = 240
 
 config.term = 'xterm-256color'
 
