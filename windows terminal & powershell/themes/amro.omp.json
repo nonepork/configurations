@@ -2,56 +2,59 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#89B4FA",
-          "style": "plain",
           "template": "\ueb99  {{ .UserName }} <#ffffff>on</>",
-          "type": "session"
+          "foreground": "#89B4FA",
+          "type": "session",
+          "style": "plain"
         },
         {
-          "foreground": "#F5C2E7",
           "properties": {
             "folder_separator_icon": "/",
             "style": "full"
           },
-          "style": "plain",
           "template": " {{ .Path }} ",
-          "type": "path"
+          "foreground": "#F5C2E7",
+          "type": "path",
+          "style": "plain"
         },
         {
-          "foreground": "#ee79d1",
-          "powerline_symbol": "\ue0b0",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "style": "plain",
           "template": "{{ .UpstreamIcon }} {{ .HEAD }}{{ if .Working.Changed }}<#CC6B49> {{ .Working.String }}</>{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "type": "git"
+          "foreground": "#ee79d1",
+          "powerline_symbol": "\ue0b0",
+          "type": "git",
+          "style": "plain"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "#A9FFB4",
-          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
           "properties": {
             "always_enabled": true
           },
-          "style": "plain",
           "template": "$ ",
-          "type": "status"
+          "foreground": "#A9FFB4",
+          "type": "status",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ]
         }
       ],
-      "type": "prompt"
+      "newline": true
     }
   ],
-  "version": 2
+  "version": 3,
+  "pwd": "osc7"
 }
