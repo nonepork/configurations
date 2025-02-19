@@ -16,7 +16,7 @@
             "folder_separator_icon": "/",
             "style": "full"
           },
-          "template": " {{ .Path }} ",
+          "template": " {{ path (abbrev 30 .Path) .Location }} ",
           "foreground": "#F5C2E7",
           "type": "path",
           "style": "plain"
