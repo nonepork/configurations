@@ -32,6 +32,7 @@ return {
         "query",
         "javascript",
         "typescript",
+        "tsx",
         "html",
         "css",
         "python",
