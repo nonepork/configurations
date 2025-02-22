@@ -1,3 +1,5 @@
+# -- Initialization --
+
 #oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/emodipt-extend-transient.omp.json" | Invoke-Expression
 $omp_file = Join-Path $PSScriptRoot "./themes/amro.omp.json"
 oh-my-posh init pwsh --config $omp_file | Invoke-Expression
@@ -12,23 +14,29 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
+Import-Module -Name Terminal-Icons
+
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
+# -- Configuration -- 
+
 # Let powershell use utf8 as encoding instead of utf16le
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
+$env:PYTHONIOENCODING='utf-8' 
 
-Import-Module -Name Terminal-Icons
+# -- Function/Alias --
+
+# For you
+New-Alias -Name vim -Value nvim
 
 function weather() {
     Invoke-RestMethod https://wttr.in/Taiwan?0
 }
 
-$env:PYTHONIOENCODING='utf-8' 
 
 function clearch() {
     Remove-Item -path (Get-PSReadlineOption).HistorySavePath
 }
-
-# For you
-New-Alias -Name vim -Value nvim
 
 function project() {
     Get-ChildItem 'D:\Projects\_Current Working' -Attributes Directory | Invoke-Fzf | Set-Location
