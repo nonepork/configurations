@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> I decided to try wezterm and currently using it as main terminal
+> Wezterm is my main teraminl emulator
 
 ---
 
@@ -9,10 +9,12 @@
 
 ### Modifications:
 - Some settings
+- Choco
 - Nerdfont
 - Oh my posh
 - PSFzf
-ripgrep is godlike
+- Ripgrep
 - PSReadline
 - Terminal-Icons
+- Zoxide
 - Custom commands
