@@ -22,6 +22,7 @@ return {
       "windwp/nvim-ts-autotag",
     },
     opts = {
+      auto_install = true,
       ensure_installed = {
         "c",
         "c_sharp",
@@ -32,7 +33,6 @@ return {
         "query",
         "javascript",
         "typescript",
-        "tsx",
         "html",
         "css",
         "python",
@@ -41,8 +41,37 @@ return {
         "go",
         "markdown",
         "markdown_inline",
+        "tsx",
+      },
+      autotag = {
+        enable = true,
+        filetypes = {
+          "html",
+          "javascript",
+          "typescript",
+          "svelte",
+          "vue",
+          "tsx",
+          "jsx",
+          "rescript",
+          "css",
+          "lua",
+          "xml",
+          "php",
+          "markdown",
+        },
       },
     },
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+    lazy = true,
+    event = "VeryLazy",
   },
 
   {
@@ -54,15 +83,10 @@ return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     lazy = false,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
   },
 
   {
     "OXY2DEV/markview.nvim",
-    lazy = false
+    lazy = false,
   },
 }
