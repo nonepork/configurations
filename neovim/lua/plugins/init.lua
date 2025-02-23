@@ -43,24 +43,6 @@ return {
         "markdown_inline",
         "tsx",
       },
-      autotag = {
-        enable = true,
-        filetypes = {
-          "html",
-          "javascript",
-          "typescript",
-          "svelte",
-          "vue",
-          "tsx",
-          "jsx",
-          "rescript",
-          "css",
-          "lua",
-          "xml",
-          "php",
-          "markdown",
-        },
-      },
     },
   },
 
@@ -68,7 +50,14 @@ return {
     "windwp/nvim-ts-autotag",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup {
+        opts = {
+          -- Defaults
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Auto rename pairs of tags
+          enable_close_on_slash = false, -- Auto close on trailing </
+        },
+      }
     end,
     lazy = true,
     event = "VeryLazy",
