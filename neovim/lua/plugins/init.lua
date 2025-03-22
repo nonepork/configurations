@@ -50,14 +50,7 @@ return {
     "windwp/nvim-ts-autotag",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("nvim-ts-autotag").setup {
-        opts = {
-          -- Defaults
-          enable_close = true, -- Auto close tags
-          enable_rename = true, -- Auto rename pairs of tags
-          enable_close_on_slash = false, -- Auto close on trailing </
-        },
-      }
+      require "configs.autotag"
     end,
     lazy = true,
     event = "VeryLazy",
@@ -72,9 +65,9 @@ return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
     },
     lazy = false,
   },
@@ -82,5 +75,50 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false,
+    opts = {
+      preview = {
+        icon_provider = "devicons",
+        filetypes = {
+          "md",
+          "markdown",
+          "norg",
+          "rmd",
+          "org",
+          "vimwiki",
+          "typst",
+          "latex",
+          "quarto",
+          "Avante",
+          "codecompanion",
+        },
+        ignore_buftypes = {},
+
+        condition = function(buffer)
+          local ft, bt = vim.bo[buffer].ft, vim.bo[buffer].bt
+
+          if bt == "nofile" and ft == "codecompanion" then
+            return true
+          elseif bt == "nofile" then
+            return false
+          else
+            return true
+          end
+        end,
+      },
+    },
+  },
+
+  {
+    "olimorris/codecompanion.nvim",
+    cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
+    config = function()
+      require "configs.codecompanion"
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      { "echasnovski/mini.diff", version = false, lazy = true },
+    },
   },
 }
+

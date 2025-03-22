@@ -55,4 +55,10 @@ configs.options.mapping = {
   end, { "i", "s" }),
 }
 
+configs.options.sources = {
+  per_filetype = {
+    codecompanion = { "codecompanion" },
+  },
+}
+
 cmp.setup(configs)

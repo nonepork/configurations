@@ -5,6 +5,9 @@
 local options = {
   base46 = {
     theme = "catppuccin", -- default theme
+    integrations = {
+      "markview",
+    },
     hl_override = {
       Comment = { italic = true },
       ["@comment"] = { italic = true },

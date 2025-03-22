@@ -31,6 +31,13 @@ end, { desc = "buffer close" })
 -- telephone
 map("n", "<leader>fg", "<cmd> Telescope live_grep<CR>", { desc = "telescope live grep" })
 
+-- codepartner
+map({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+map({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+map("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+vim.cmd([[cab cc CodeCompanion]])
+
 ----------------------------
 
 local nomap = vim.keymap.del
