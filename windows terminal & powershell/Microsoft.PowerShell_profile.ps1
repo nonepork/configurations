@@ -30,14 +30,10 @@ $env:PYTHONIOENCODING='utf-8'
 New-Alias -Name vim -Value nvim
 
 function weather() {
-    Invoke-RestMethod https://wttr.in/Taiwan?0
+    Invoke-RestMethod https://wttr.in/
 }
 
 
 function clearch() {
     Remove-Item -path (Get-PSReadlineOption).HistorySavePath
-}
-
-function project() {
-    Get-ChildItem 'D:\Projects\_Current Working' -Attributes Directory | Invoke-Fzf | Set-Location
 }
