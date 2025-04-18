@@ -10,3 +10,4 @@ It's basically nvchad with some modifications.
 - Ripgrep
 - Mingw
 - GnuWin32
+- Pywal if you're on linux

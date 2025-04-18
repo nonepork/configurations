@@ -10,7 +10,8 @@ oh-my-posh init pwsh --config $omp_file | Invoke-Expression
 # for `choco` will not function.
 # See https://ch0.co/tab-completion for details.
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
+if (Test-Path($ChocolateyProfile))
+{
   Import-Module "$ChocolateyProfile"
 }
 
@@ -29,11 +30,13 @@ $env:PYTHONIOENCODING='utf-8'
 # For you
 New-Alias -Name vim -Value nvim
 
-function weather() {
-    Invoke-RestMethod https://wttr.in/
+function weather()
+{
+  Invoke-RestMethod https://wttr.in/Taiwan?0
 }
 
 
-function clearch() {
-    Remove-Item -path (Get-PSReadlineOption).HistorySavePath
+function clearch()
+{
+  Remove-Item -path (Get-PSReadlineOption).HistorySavePath
 }

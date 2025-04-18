@@ -21,29 +21,7 @@ return {
     dependencies = {
       "windwp/nvim-ts-autotag",
     },
-    opts = {
-      auto_install = true,
-      ensure_installed = {
-        "c",
-        "c_sharp",
-        "cpp",
-        "lua",
-        "vim",
-        "vimdoc",
-        "query",
-        "javascript",
-        "typescript",
-        "html",
-        "css",
-        "python",
-        "regex",
-        "bash",
-        "go",
-        "markdown",
-        "markdown_inline",
-        "tsx",
-      },
-    },
+    opts = require "configs.treesitter"
   },
 
   {
@@ -75,50 +53,18 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false,
-    opts = {
-      preview = {
-        icon_provider = "devicons",
-        filetypes = {
-          "md",
-          "markdown",
-          "norg",
-          "rmd",
-          "org",
-          "vimwiki",
-          "typst",
-          "latex",
-          "quarto",
-          "Avante",
-          "codecompanion",
-        },
-        ignore_buftypes = {},
-
-        condition = function(buffer)
-          local ft, bt = vim.bo[buffer].ft, vim.bo[buffer].bt
-
-          if bt == "nofile" and ft == "codecompanion" then
-            return true
-          elseif bt == "nofile" then
-            return false
-          else
-            return true
-          end
-        end,
-      },
-    },
-  },
-
-  {
-    "olimorris/codecompanion.nvim",
-    cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
     config = function()
-      require "configs.codecompanion"
+      require "configs.markview"
     end,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      { "echasnovski/mini.diff", version = false, lazy = true },
-    },
   },
-}
 
+  -- {
+  --   "seblyng/roslyn.nvim",
+  --   ft = "cs",
+  --   ---@module 'roslyn.config'
+  --   ---@type RoslynNvimConfig
+  --   opts = {
+  --     -- your configuration comes here; leave empty for default settings
+  --   },
+  -- },
+}
