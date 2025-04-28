@@ -19,6 +19,7 @@ map("n", "Y", [["+Y]])
 map({"n", "v"}, "d", [["_d]])
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "Find & Replace all current word" })
+map("v", "<leader>s", [[y:%s/\<<C-r>"\>/<C-r>"/gI<Left><Left><Left>]], {desc = "Find & Replace all selected text" })
 
 -- nvimgrass
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
@@ -30,13 +31,6 @@ end, { desc = "buffer close" })
 
 -- telephone
 map("n", "<leader>fg", "<cmd> Telescope live_grep<CR>", { desc = "telescope live grep" })
-
--- codepartner
-map({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-map({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-map("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-
-vim.cmd([[cab cc CodeCompanion]])
 
 ----------------------------
 
