@@ -24,3 +24,6 @@ https://vi.stackexchange.com/questions/6382/why-do-symbols-look-ugly-in-gvim
 
 - Pasting don't overwrite clipboard:
 https://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines
+
+### vimrc_quick
+I tried to remove things and make my configuration work cross-platform and no other file required, for sshing and other purpose
