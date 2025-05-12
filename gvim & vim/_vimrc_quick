@@ -4,6 +4,7 @@ set nocompatible
 set background=dark
 syntax on
 filetype plugin on
+filetype indent on
 set foldmethod=syntax
 set showmatch
 set number
@@ -16,7 +17,9 @@ if has('termguicolors')
 endif
 
 " --- text editing ---
-set clipboard=unnamed
+if has('clipboard')
+    set clipboard+=unnamedplus
+endif
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -34,9 +37,12 @@ set mouse=a
 
 set list listchars=tab:»·,trail:·
 
+set noswapfile
+set nobackup
+set nowritebackup
+
 " --- remapping ---
 let mapleader= " "
-nnoremap <leader>pv Ex<CR>
 
 nmap j gj
 nmap k gk
