@@ -21,7 +21,7 @@ return {
     dependencies = {
       "windwp/nvim-ts-autotag",
     },
-    opts = require "configs.treesitter"
+    opts = require "configs.treesitter",
   },
 
   {
@@ -58,13 +58,6 @@ return {
     end,
   },
 
-  -- {
-  --   "seblyng/roslyn.nvim",
-  --   ft = "cs",
-  --   ---@module 'roslyn.config'
-  --   ---@type RoslynNvimConfig
-  --   opts = {
-  --     -- your configuration comes here; leave empty for default settings
-  --   },
-  -- },
+  -- test new blink
+  { import = "nvchad.blink.lazyspec" },
 }
