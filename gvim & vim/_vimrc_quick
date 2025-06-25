@@ -61,6 +61,8 @@ nnoremap <Esc> :noh<CR>
 
 " some of the greatest remap ever exist
 vnoremap p "_dP
+nnoremap p "+p
+nnoremap P "+P
 
 nnoremap y "+y
 vnoremap y "+y
@@ -87,4 +89,3 @@ function! InsertTabWrapper()
     endif
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
-
