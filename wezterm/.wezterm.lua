@@ -20,14 +20,17 @@ config.launch_menu = {
 
 -- Appearances
 
-config.color_scheme = "Catppuccin Mocha"
-config.font = wezterm.font("Iosevka Nerd Font")
+config.color_scheme = "tokyonight_moon"
+config.font = wezterm.font("Iosevka Nerd Font", { weight = "Regular" })
 config.font_size = 12
 config.cell_width = 1
 
 -- config.enable_tab_bar = false
 
-config.window_decorations = "TITLE | RESIZE"
+-- config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "RESIZE"
+
+config.bold_brightens_ansi_colors = true
 
 config.default_cursor_style = "BlinkingBar"
 config.animation_fps = 1
@@ -141,10 +144,28 @@ end
 
 -- Tab bar
 
-config.hide_tab_bar_if_only_one_tab = false
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
-config.tab_and_split_indices_are_zero_based = true
+config.tab_bar_at_bottom = false
+config.use_fancy_tab_bar = true
+config.show_new_tab_button_in_tab_bar = false
+config.tab_and_split_indices_are_zero_based = false
+config.window_frame = {
+	font_size = 10,
+	active_titlebar_bg = "#141620",
+	inactive_titlebar_bg = "#141620",
+}
+config.colors = {
+	tab_bar = {
+		inactive_tab_edge = "#141620",
+		active_tab = {
+			bg_color = "#141620",
+			fg_color = "#c6a0f6",
+		},
+		inactive_tab = {
+			bg_color = "#141620",
+			fg_color = "#808080",
+		},
+	},
+}
 
 -- Tmux status
 
@@ -155,7 +176,7 @@ wezterm.on("update-right-status", function(window, _)
 
 	if window:leader_is_active() then
 		prefix = " " .. utf8.char(0x1f30a) -- ocean wave
-		SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+		-- SOLID_LEFT_ARROW = utf8.char(0xe0b2)
 	end
 
 	if window:active_tab():tab_id() ~= 0 then
@@ -163,7 +184,7 @@ wezterm.on("update-right-status", function(window, _)
 	end -- arrow color based on if tab is first pane
 
 	window:set_left_status(wezterm.format({
-		{ Background = { Color = "#b7bdf8" } },
+		-- { Background = { Color = "#b7bdf8" } },
 		{ Text = prefix },
 		ARROW_FOREGROUND,
 		{ Text = SOLID_LEFT_ARROW },

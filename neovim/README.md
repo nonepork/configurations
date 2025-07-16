@@ -2,12 +2,9 @@
 
 ![](preview.png)
 
-It's basically nvchad with some modifications.
+Rewritten from kickstart.nvim :))))
 
 ### Modifications:
-- Some settings
-- Nvchad
 - Ripgrep
-- Mingw
 - GnuWin32
-- Pywal if you're on linux
+- Npm, python, go, et cetera (for lsps and formatters)
