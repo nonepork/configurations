@@ -31,16 +31,25 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<C-up>', '1<C-w>+', { desc = 'Increase vertical window height', noremap = true, silent = true })
-vim.keymap.set('n', '<C-down>', '1<C-w>-', { desc = 'Decrease vertical window height', noremap = true, silent = true })
-vim.keymap.set('n', '<C-left>', '1<C-w><', { desc = 'Decrease horizontal window height', noremap = true, silent = true })
-vim.keymap.set('n', '<C-right>', '1<C-w>>', { desc = 'Increase horizontal window height', noremap = true, silent = true })
+vim.keymap.set('n', '<C-up>', '3<C-w>+', { desc = 'Increase vertical window height', noremap = true, silent = true })
+vim.keymap.set('n', '<C-down>', '3<C-w>-', { desc = 'Decrease vertical window height', noremap = true, silent = true })
+vim.keymap.set('n', '<C-left>', '3<C-w><', { desc = 'Decrease horizontal window height', noremap = true, silent = true })
+vim.keymap.set('n', '<C-right>', '3<C-w>>', { desc = 'Increase horizontal window height', noremap = true, silent = true })
 
 vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next tab', noremap = true, silent = true })
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprev<CR>', { desc = 'Previous tab', noremap = true, silent = true })
 vim.keymap.set('n', 'C', '<cmd>bd<CR>', { desc = 'Close buffer', noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Nvim Tree', noremap = true, silent = true })
+
+vim.keymap.set('n', 'K', function() -- Stole from petter-tchirkov
+  local is_diagnostic = require('misc').is_diagnostic()
+  if is_diagnostic == true then
+    return vim.diagnostic.open_float { scope = 'cursor' }
+  else
+    return vim.lsp.buf.hover()
+  end
+end, { desc = 'Open docs/Show diagnostic in float' })
 
 -- [[ Autocommands ]]
 -- Highlight when yanking (copying) text
