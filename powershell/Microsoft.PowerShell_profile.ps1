@@ -32,7 +32,7 @@ New-Alias -Name vim -Value nvim
 
 function weather()
 {
-  Invoke-RestMethod https://wttr.in/Taiwan?0
+  Invoke-RestMethod https://wttr.in/
 }
 
 

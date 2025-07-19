@@ -1,9 +1,4 @@
-> [!IMPORTANT]
-> Wezterm is my main teraminl emulator
-
----
-
-# windows terminal / powershell
+# powershell
 
 ![](preview.png)
 
