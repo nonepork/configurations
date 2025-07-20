@@ -9,6 +9,7 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+vim.o.shiftwidth = 4
 vim.o.breakindent = true
 
 vim.o.undofile = true
