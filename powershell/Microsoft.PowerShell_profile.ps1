@@ -32,11 +32,29 @@ New-Alias -Name vim -Value nvim
 
 function weather()
 {
-  Invoke-RestMethod https://wttr.in/
+  Invoke-RestMethod https://wttr.in/Taiwan?0
 }
 
 
 function clearch()
 {
   Remove-Item -path (Get-PSReadlineOption).HistorySavePath
+}
+
+function vsenv {
+    $vsToolsPath = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+    $instanceId = "a3bf19de"
+
+    if (-Not (Test-Path $vsToolsPath)) {
+        Write-Error "DevShell module not found at: $vsToolsPath"
+        return
+    }
+
+    Import-Module $vsToolsPath
+
+    Enter-VsDevShell -InstanceId $instanceId `
+                     -SkipAutomaticLocation `
+                     -DevCmdArguments "-arch=x64 -host_arch=x64"
+
+    Write-Host "✅ Visual Studio dev environment loaded." -ForegroundColor Green
 }
