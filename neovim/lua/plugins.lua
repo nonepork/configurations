@@ -1,3 +1,4 @@
+-- https://github.com/rezhaTanuharja/minimalistNVIM/blob/main/init.lua
 require('lazy').setup({
   {
     'NMAC427/guess-indent.nvim',
@@ -134,6 +135,14 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
     },
     opts = {},
+  },
+
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = require 'configs.blankline',
   },
 }, {
   ui = {

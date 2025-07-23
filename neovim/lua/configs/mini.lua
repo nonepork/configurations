@@ -33,6 +33,13 @@ return function()
     return ' ', mode_info.hl
   end
 
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'NvimTree',
+    callback = function(args)
+      vim.b.ministatusline_disable = true
+    end,
+  })
+
   require('mini.tabline').setup()
   require('mini.pairs').setup()
   require('mini.comment').setup {

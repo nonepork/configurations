@@ -10,6 +10,7 @@ vim.schedule(function()
 end)
 
 vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 vim.o.breakindent = true
 
 vim.o.undofile = true
@@ -36,5 +37,7 @@ vim.o.cursorline = true
 vim.o.scrolloff = 8
 
 vim.o.confirm = true
+
+vim.o.wrap = true
 
 -- vim: ts=2 sts=2 sw=2 et
