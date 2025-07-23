@@ -30,13 +30,12 @@ config.cell_width = 1
 -- config.window_decorations = "TITLE | RESIZE"
 config.window_decorations = "RESIZE"
 
-config.bold_brightens_ansi_colors = true
-
 config.default_cursor_style = "BlinkingBar"
 config.animation_fps = 1
 config.cursor_blink_rate = 550
 
 config.front_end = "WebGpu"
+config.webgpu_power_preference = "HighPerformance"
 config.max_fps = 60
 
 config.term = "xterm-256color"
