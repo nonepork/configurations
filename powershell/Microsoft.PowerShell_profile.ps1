@@ -17,7 +17,7 @@ if (Test-Path($ChocolateyProfile))
 
 Import-Module -Name Terminal-Icons
 
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
+Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
 
 # -- Configuration -- 
 
