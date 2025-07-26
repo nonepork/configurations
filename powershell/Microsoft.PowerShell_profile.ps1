@@ -30,12 +30,6 @@ $env:PYTHONIOENCODING='utf-8'
 # For you
 New-Alias -Name vim -Value nvim
 
-function weather()
-{
-  Invoke-RestMethod https://wttr.in/Taiwan?0
-}
-
-
 function clearch()
 {
   Remove-Item -path (Get-PSReadlineOption).HistorySavePath
