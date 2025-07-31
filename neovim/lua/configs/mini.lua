@@ -1,4 +1,8 @@
 return function()
+  -- TODO:
+  -- https://www.reddit.com/r/vimporn/comments/1fkrazo/almost_2_years_to_reach_this_config/
+  -- https://www.reddit.com/r/vimporn/comments/1g63zrc/trying_out_iosevka_nerd_font_and_its_so_nice/
+  -- tabline as well
   require('mini.ai').setup { n_lines = 500 }
   require('mini.surround').setup()
 
