@@ -1,4 +1,3 @@
--- https://github.com/rezhaTanuharja/minimalistNVIM/blob/main/init.lua
 require('lazy').setup({
   {
     'NMAC427/guess-indent.nvim',
@@ -8,12 +7,6 @@ require('lazy').setup({
   {
     'lewis6991/gitsigns.nvim',
     opts = require 'configs.gitsigns',
-  },
-
-  {
-    'folke/which-key.nvim',
-    event = 'VimEnter',
-    opts = require 'configs.which-key',
   },
 
   {
@@ -42,14 +35,13 @@ require('lazy').setup({
 
   {
     'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      { 'j-hui/fidget.nvim', opts = {} },
-
-      'saghen/blink.cmp',
+      { 'j-hui/fidget.nvim', opts = require 'configs.fidget' },
     },
     config = require 'configs.lspconfig',
   },
@@ -86,15 +78,12 @@ require('lazy').setup({
           return 'make install_jsregexp'
         end)(),
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
         opts = {},
       },
@@ -111,7 +100,12 @@ require('lazy').setup({
     config = require 'configs.colorscheme',
   },
 
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+  },
 
   {
     'echasnovski/mini.nvim',
@@ -130,7 +124,19 @@ require('lazy').setup({
   {
     'nvim-tree/nvim-tree.lua',
     version = '*',
-    lazy = false,
+    cmd = { 'NvimTreeToggle', 'NvimTreeFindFile' },
+    init = function()
+      local arg = vim.fn.argv(0)
+      local stat = vim.loop.fs_stat(arg or '')
+      if stat and stat.type == 'directory' then
+        vim.api.nvim_create_autocmd('VimEnter', {
+          once = true,
+          callback = function()
+            require('nvim-tree.api').tree.open()
+          end,
+        })
+      end
+    end,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -139,10 +145,17 @@ require('lazy').setup({
 
   {
     'lukas-reineke/indent-blankline.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
     main = 'ibl',
     ---@module "ibl"
     ---@type ibl.config
     opts = require 'configs.blankline',
+  },
+
+  {
+    'catgoose/nvim-colorizer.lua',
+    event = 'VeryLazy',
+    opts = require 'configs.colorizer',
   },
 }, {
   ui = {
@@ -160,6 +173,22 @@ require('lazy').setup({
       start = '🚀',
       task = '📌',
       lazy = '💤 ',
+    },
+  },
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    reset_packpath = true,
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'netrwPlugin',
+        'spellfile',
+        'tarPlugin',
+        'zipPlugin',
+        'man', -- this is not sexist
+      },
     },
   },
 })

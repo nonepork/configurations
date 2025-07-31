@@ -49,6 +49,43 @@ return function()
       comment_visual = '<leader>/',
     },
   }
+
+  local clue = require 'mini.clue'
+  clue.setup {
+    triggers = {
+      { mode = 'n', keys = '<Leader>' },
+      { mode = 'x', keys = '<Leader>' },
+      { mode = 'n', keys = 'g' },
+      { mode = 'x', keys = 'g' },
+      { mode = 'n', keys = '[', desc = 'Previous' },
+      { mode = 'n', keys = ']', desc = 'Next' },
+      { mode = 'n', keys = '<C-w>' },
+      { mode = 'n', keys = 's' },
+      { mode = 'x', keys = 's' },
+    },
+
+    clues = {
+      clue.gen_clues.builtin_completion(),
+      clue.gen_clues.g(),
+      clue.gen_clues.marks(),
+      clue.gen_clues.registers(),
+      clue.gen_clues.windows(),
+      clue.gen_clues.z(),
+
+      -- Grouping
+      { mode = 'n', keys = '<leader>f', desc = '[F]ind' },
+      { mode = 'n', keys = '<leader>t', desc = '[T]oggle' },
+      { mode = 'n', keys = '<leader>h', desc = 'Git [H]unk' },
+      { mode = 'v', keys = '<leader>h', desc = 'Git [H]unk' },
+    },
+
+    window = {
+      delay = 500,
+      config = {
+        width = 'auto',
+      },
+    },
+  }
 end
 
 -- vim: ts=2 sts=2 sw=2 et

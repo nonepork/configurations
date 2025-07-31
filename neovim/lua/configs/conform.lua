@@ -23,6 +23,7 @@ return {
     javascriptreact = { 'prettierd' },
     typescriptreact = { 'prettierd' },
     json = { 'prettierd' },
+    markdown = { 'prettierd' },
     python = { 'reorder-python-imports', 'black' },
     -- Conform can also run multiple formatters sequentially
     -- python = { "isort", "black" },

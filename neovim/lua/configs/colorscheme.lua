@@ -49,6 +49,11 @@ return function()
         fg = 'NONE',
         bg = 'NONE',
       }
+
+      hl.MiniClueBorder = {
+        fg = c.bg_dark,
+        bg = 'NONE',
+      }
     end,
   }
 
