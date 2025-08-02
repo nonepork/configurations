@@ -140,7 +140,7 @@ require('lazy').setup({
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    opts = {},
+    opts = require 'configs.nvim-tree',
   },
 
   {

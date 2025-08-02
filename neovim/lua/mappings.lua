@@ -40,8 +40,7 @@ vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next tab', noremap = tr
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprev<CR>', { desc = 'Previous tab', noremap = true, silent = true })
 vim.keymap.set('n', 'C', '<cmd>bd<CR>', { desc = 'Close buffer', noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'NTree: Toggle nvim-tree', noremap = true, silent = true })
-vim.keymap.set('n', '\\', '<cmd>NvimTreeFindFile<CR>', { desc = 'NTree: Find file in tree', noremap = true, silent = true })
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle nvim-tree', noremap = true, silent = true })
 vim.keymap.set('n', '<leader>gi', '<cmd>GuessIndent<CR>', { desc = '[G]uess [I]ndent' })
 
 vim.keymap.set('n', 'K', function() -- Stole from petter-tchirkov
