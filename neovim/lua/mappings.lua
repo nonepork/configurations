@@ -47,9 +47,9 @@ vim.keymap.set('n', '<leader>gi', '<cmd>GuessIndent<CR>', { desc = '[G]uess [I]n
 vim.keymap.set('n', 'K', function() -- Stole from petter-tchirkov
   local is_diagnostic = require('misc').is_diagnostic()
   if is_diagnostic == true then
-    return vim.diagnostic.open_float { scope = 'cursor' }
+    return vim.diagnostic.open_float { scope = 'cursor', border = 'single' }
   else
-    return vim.lsp.buf.hover()
+    return vim.lsp.buf.hover { border = 'single' }
   end
 end, { desc = 'Open docs/Show diagnostic in float' })
 
