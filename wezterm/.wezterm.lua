@@ -59,7 +59,7 @@ config.keys = {
 	},
 	{
 		mods = "LEADER",
-		key = "x",
+		key = "q",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
@@ -139,12 +139,12 @@ config.keys = {
 	},
 }
 
-for i = 0, 9 do
+for i = 1, 9 do
 	-- leader + number to activate that tab
 	table.insert(config.keys, {
 		key = tostring(i),
 		mods = "LEADER",
-		action = wezterm.action.ActivateTab(i),
+		action = wezterm.action.ActivateTab(i - 1),
 	})
 end
 
