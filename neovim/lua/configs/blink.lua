@@ -3,8 +3,8 @@ return {
     -- For an understanding of why the 'default' preset is recommended,
     -- you will need to read `:help ins-completion`
     preset = 'enter',
-    ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
-    ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
+    ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+    ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
 
     -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
     --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
