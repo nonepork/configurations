@@ -112,7 +112,7 @@ return function()
     local additions = statuses.added or 0
     local deletions = statuses.removed or 0
 
-    return '%#GitSignsChange#~' .. changes .. ' %#GitSignsAdd#+' .. additions .. ' %#GitSignsDelete#-' .. deletions .. '%*'
+    return ' ' .. '%#GitSignsChange#~' .. changes .. ' %#GitSignsAdd#+' .. additions .. ' %#GitSignsDelete#-' .. deletions .. '%*'
   end
   ---@diagnostic disable-next-line: duplicate-set-field
   statusline.section_diagnostics = function(args)
@@ -138,15 +138,15 @@ return function()
     local parts = {}
 
     if error_count > 0 then
-      table.insert(parts, '%#DiagnosticError#' .. error_count .. '%*')
+      table.insert(parts, '%#DiagnosticError#E' .. error_count .. '%*')
     end
 
     if warning_count > 0 then
-      table.insert(parts, '%#DiagnosticWarn#' .. warning_count .. '%*')
+      table.insert(parts, '%#DiagnosticWarn#W' .. warning_count .. '%*')
     end
 
     if infonhints_count > 0 then
-      table.insert(parts, '%#DiagnosticInfo#' .. infonhints_count .. '%*')
+      table.insert(parts, '%#DiagnosticHint#I' .. infonhints_count .. '%*')
     end
 
     if #parts == 0 then

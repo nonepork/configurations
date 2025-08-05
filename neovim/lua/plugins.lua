@@ -154,7 +154,7 @@ require('lazy').setup({
 
   {
     'catgoose/nvim-colorizer.lua',
-    event = 'VeryLazy',
+    event = { 'BufReadPost', 'BufNewFile' },
     opts = require 'configs.colorizer',
   },
 }, {

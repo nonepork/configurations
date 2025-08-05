@@ -91,33 +91,14 @@ return function()
   })
 
   -- Diagnostic Config
-  -- Stole from and-rs
   vim.diagnostic.config {
-    virtual_text = {
-      enabled = true,
-      source = 'if_many',
-      prefix = function(diagnostic)
-        if not vim.g.have_nerd_font then
-          return ''
-        end
-
-        if diagnostic.severity == vim.diagnostic.severity.ERROR then
-          return '🭰× '
-        elseif diagnostic.severity == vim.diagnostic.severity.WARN then
-          return '🭰▲ '
-        else
-          return '🭰• '
-        end
-      end,
-      suffix = '🭵',
-    },
     underline = true,
     signs = {
       text = vim.g.have_nerd_font and {
-        [vim.diagnostic.severity.ERROR] = '×',
-        [vim.diagnostic.severity.WARN] = ' ▲',
-        [vim.diagnostic.severity.HINT] = '•',
-        [vim.diagnostic.severity.INFO] = '•',
+        [vim.diagnostic.severity.ERROR] = 'E',
+        [vim.diagnostic.severity.WARN] = 'W',
+        [vim.diagnostic.severity.HINT] = 'H',
+        [vim.diagnostic.severity.INFO] = 'I',
       },
     } or {},
   }
@@ -163,27 +144,8 @@ return function()
     },
   }
 
-  -- Ensure the servers and tools above are installed
-  --
-  -- To check the current status of installed tools and/or manually install
-  -- other tools, you can run
-  --    :Mason
-  --
-  -- You can press `g?` for help in this menu.
-  --
-  -- `mason` had to be setup earlier: to configure its options see the
-  -- `dependencies` table for `nvim-lspconfig` above.
-  --
-  -- You can add other tools here that you want Mason to install
-  -- for you, so that they are available from within Neovim.
-  local ensure_installed = vim.tbl_keys(servers or {})
-  vim.list_extend(ensure_installed, {
-    'stylua',
-  })
-  require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
   require('mason-lspconfig').setup {
-    ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+    ensure_installed = { 'stylua' },
     automatic_installation = false,
     handlers = {
       function(server_name)
