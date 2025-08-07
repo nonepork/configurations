@@ -5,7 +5,6 @@ set background=dark
 syntax on
 filetype plugin on
 filetype indent on
-set foldmethod=syntax
 set showmatch
 set number
 set relativenumber
@@ -27,6 +26,8 @@ set softtabstop=4
 set autoindent
 set nowrap
 set backspace=indent,eol,start
+
+set foldlevelstart=99
 
 set incsearch
 set hlsearch
