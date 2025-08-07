@@ -40,6 +40,8 @@ set list listchars=tab:»·,trail:·
 set noswapfile
 set nobackup
 set nowritebackup
+set undofile
+set undodir=~/.vim/undodir
 
 " --- remapping ---
 let mapleader= " "
