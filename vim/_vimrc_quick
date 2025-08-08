@@ -45,7 +45,7 @@ set undofile
 set undodir=~/.vim/undodir
 
 set timeoutlen=300
-set timeoutlen=50
+set ttimeoutlen=50
 
 " --- remapping ---
 let mapleader= " "
