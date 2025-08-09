@@ -1,4 +1,9 @@
 return {
+  actions = {
+    remove_file = {
+      close_window = false,
+    },
+  },
   update_focused_file = {
     enable = true,
   },

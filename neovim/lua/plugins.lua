@@ -88,6 +88,7 @@ require('lazy').setup({
         opts = {},
       },
       'folke/lazydev.nvim',
+      'fang2hou/blink-copilot',
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
@@ -114,7 +115,9 @@ require('lazy').setup({
 
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'OXY2DEV/markview.nvim' },
+    dependencies = {
+      'OXY2DEV/markview.nvim',
+    },
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
     lazy = false,
@@ -157,6 +160,28 @@ require('lazy').setup({
     event = { 'BufReadPost', 'BufNewFile' },
     opts = require 'configs.colorizer',
   },
+
+  {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+      server_opts_overrides = {
+        settings = {
+          telemetry = {
+            telemetryLevel = 'off',
+          },
+        },
+      },
+    },
+  },
+
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    config = require 'configs.tree-context',
+  },
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
@@ -188,6 +213,7 @@ require('lazy').setup({
         'tarPlugin',
         'zipPlugin',
         'man', -- this is not sexist
+        'tutor',
       },
     },
   },
