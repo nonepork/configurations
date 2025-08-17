@@ -197,5 +197,27 @@ wezterm.on("update-right-status", function(window, _)
 	}))
 end)
 
+-- Mouse related
+local act = wezterm.action
+config.mouse_bindings = {
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "NONE",
+		action = act.CompleteSelection("ClipboardAndPrimarySelection"),
+	},
+	-- Bind 'Up' event of CTRL-Click to open hyperlinks
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "CTRL",
+		action = act.OpenLinkAtMouseCursor,
+	},
+	-- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
+	{
+		event = { Down = { streak = 1, button = "Left" } },
+		mods = "CTRL",
+		action = act.Nop,
+	},
+}
+
 -- and finally, return the configuration to wezterm
 return config
