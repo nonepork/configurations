@@ -8,7 +8,6 @@
 - Choco
 - Nerdfont
 - Oh my posh
-- ppmnottheunit
 - PSFzf
 - Ripgrep
 - PSReadline
