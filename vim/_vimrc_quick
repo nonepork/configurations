@@ -16,9 +16,7 @@ if has('termguicolors')
 endif
 
 " --- text editing ---
-if has('clipboard')
-    set clipboard+=unnamedplus
-endif
+set clipboard=unnamedplus
 set expandtab
 set shiftwidth=4
 set tabstop=4
