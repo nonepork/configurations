@@ -1,10 +1,16 @@
 return {
+  enabled = function()
+    return not vim.snippet.active() -- Don't show when in snippet mode
+  end,
+
   keymap = {
     -- For an understanding of why the 'default' preset is recommended,
     -- you will need to read `:help ins-completion`
     preset = 'enter',
     ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
     ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+    ['<C-e>'] = { 'hide', 'fallback' },
+    ['<C-k>'] = { 'show', 'show_documentation', 'hide_documentation' },
 
     -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
     --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

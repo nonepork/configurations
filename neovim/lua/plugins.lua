@@ -116,7 +116,14 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
-      'OXY2DEV/markview.nvim',
+      'MeanderingProgrammer/render-markdown.nvim',
+      config = function()
+        require('render-markdown').setup {
+          code = {
+            border = 'thick',
+          },
+        }
+      end,
     },
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
@@ -165,22 +172,23 @@ require('lazy').setup({
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     event = 'InsertEnter',
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-      server_opts_overrides = {
-        settings = {
-          telemetry = {
-            telemetryLevel = 'off',
-          },
-        },
-      },
-    },
+    opts = require 'configs.copilot',
   },
 
   {
     'nvim-treesitter/nvim-treesitter-context',
     config = require 'configs.tree-context',
+  },
+
+  {
+    'folke/trouble.nvim',
+    opts = {},
+  },
+
+  {
+    'windwp/nvim-ts-autotag',
+    event = 'InsertEnter',
+    opts = {},
   },
 }, {
   ui = {

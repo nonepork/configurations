@@ -155,12 +155,6 @@ return function()
 
     return table.concat(parts, ' ')
   end
-  vim.api.nvim_create_autocmd('FileType', {
-    pattern = 'NvimTree',
-    callback = function(args)
-      vim.b.ministatusline_disable = true
-    end,
-  })
 
   require('mini.tabline').setup {
     show_icons = false,

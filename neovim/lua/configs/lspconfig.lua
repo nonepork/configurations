@@ -132,14 +132,51 @@ return function()
           },
         },
       },
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = 'basic',
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              autoImportCompletions = true,
+            },
+          },
+          python = {
+            pythonPath = 'python',
+            analysis = {
+              reportIgnoreCommentWithoutRule = false,
+              reportUnnecessaryTypeIgnoreComment = false,
+              reportMissingTypeStubs = false,
+              reportUnusedCallResult = false,
+              reportAny = false,
+              reportExplicitAny = false,
+              reportImplicitStringConcatenation = false,
+              reportUnreachable = false,
+              reportUnknownVariableType = false,
+              reportUnknownArgumentType = false,
+            },
+          },
+        },
+      },
     },
     others = {},
   }
+
+  for server, config in pairs(vim.tbl_extend('keep', servers.mason, servers.others)) do
+    if vim.fn.empty(config) ~= 1 then
+      vim.lsp.config(server, config)
+    end
+  end
 
   require('mason-lspconfig').setup {
     ensure_installed = {},
     automatic_enable = true, -- automatically run vim.lsp.enable() for all servers that are installed via Mason
   }
+
+  if vim.fn.empty(servers.others) ~= 1 then
+    vim.lsp.enable(vim.tbl_keys(servers.others))
+  end
 end
 
 -- vim: ts=2 sts=2 sw=2 et
