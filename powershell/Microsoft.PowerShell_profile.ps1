@@ -23,16 +23,23 @@ Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
 
 # Let powershell use utf8 as encoding instead of utf16le
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
-$env:PYTHONIOENCODING='utf-8' 
+$env:PYTHONIOENCODING='utf-8'
 
 # -- Function/Alias --
 
 # For you
 New-Alias -Name vim -Value nvim
 
-function clearch()
-{
+function clearch() {
   Remove-Item -path (Get-PSReadlineOption).HistorySavePath
+}
+
+function icat {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$Path
+    )
+    wezterm imgcat $Path
 }
 
 function vsenv {
@@ -51,4 +58,12 @@ function vsenv {
                      -DevCmdArguments "-arch=x64 -host_arch=x64"
 
     Write-Host "✅ Visual Studio dev environment loaded." -ForegroundColor Green
+}
+
+function komorebistart() {
+    komorebic start --whkd
+}
+
+function komorebistop() {
+    komorebic stop --whkd
 }
