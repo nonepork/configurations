@@ -22,7 +22,7 @@ return {
         git = {
           unstaged = '×',
           staged = '✓',
-          unmerged = '',
+          unmerged = '',
           untracked = '★',
           renamed = '',
           deleted = '󰆴',
