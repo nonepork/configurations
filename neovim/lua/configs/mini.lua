@@ -161,9 +161,28 @@ return function()
     tabpage_section = 'right',
     format = function(buf_id, label)
       local fixed_width = 20
-      local name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf_id), ':t')
+      local fullpath = vim.api.nvim_buf_get_name(buf_id)
+      local name = vim.fn.fnamemodify(fullpath, ':t')
       if name == '' then
         name = '[no name]'
+      end
+
+      local duplicates = false
+      for _, b in ipairs(vim.api.nvim_list_bufs()) do
+        if b ~= buf_id and vim.api.nvim_buf_is_loaded(b) then
+          local other = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(b), ':t')
+          if other == name then
+            duplicates = true
+            break
+          end
+        end
+      end
+
+      if duplicates then
+        local parent = vim.fn.fnamemodify(fullpath, ':h:t')
+        if parent ~= '' then
+          name = parent .. '/' .. name
+        end
       end
 
       -- Truncate if necessary
