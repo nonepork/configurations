@@ -44,14 +44,25 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- TODO: make this better
 vim.keymap.set('n', '<C-up>', '3<C-w>+', { desc = 'Increase vertical window height', noremap = true, silent = true })
 vim.keymap.set('n', '<C-down>', '3<C-w>-', { desc = 'Decrease vertical window height', noremap = true, silent = true })
 vim.keymap.set('n', '<C-left>', '3<C-w><', { desc = 'Decrease horizontal window height', noremap = true, silent = true })
 vim.keymap.set('n', '<C-right>', '3<C-w>>', { desc = 'Increase horizontal window height', noremap = true, silent = true })
 
+function SmartBufDelete()
+  local buf = vim.api.nvim_get_current_buf()
+  local buftype = vim.bo[buf].buftype
+  if buftype == 'help' or buftype == 'terminal' then
+    vim.cmd 'bd'
+  else
+    vim.cmd 'lua MiniBufremove.delete(0, true)'
+  end
+end
+
 vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next tab', noremap = true, silent = true })
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprev<CR>', { desc = 'Previous tab', noremap = true, silent = true })
-vim.keymap.set('n', 'C', '<cmd>bd<CR>', { desc = 'Close buffer', noremap = true, silent = true })
+vim.keymap.set('n', 'C', '<cmd>lua SmartBufDelete()<CR>', { desc = 'Close buffer smartly', noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle nvim-tree', noremap = true, silent = true })
 vim.keymap.set('n', '<leader>gi', '<cmd>GuessIndent<CR>', { desc = '[G]uess [I]ndent' })

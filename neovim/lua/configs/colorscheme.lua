@@ -35,6 +35,7 @@ return function()
       hl.MiniTablineHidden = { fg = c.dark3, bg = 'NONE' }
       hl.MiniStatuslineDevinfo = { fg = c.fg, bg = 'NONE' }
       hl.MiniStatuslineFileinfo = { fg = c.dark3, bg = 'NONE' }
+      -- hl.NvimTreeRootFolder = { fg = c.dark3, bg = 'NONE' }
     end,
   }
 
