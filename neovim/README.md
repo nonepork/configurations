@@ -4,7 +4,9 @@
 
 Rewritten from kickstart.nvim :))))
 
-### Modifications:
+### Prerequisite:
+
 - Ripgrep
 - GnuWin32
-- Npm, python, go, et cetera (for lsps and formatters)
+- Git
+- npm, python, go, et cetera (for lsps and formatters)
