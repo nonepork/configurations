@@ -67,3 +67,11 @@ function komorebistart() {
 function komorebistop() {
     komorebic stop --whkd
 }
+
+function whereis {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$Command
+    )
+    Get-Command $Command | Select-Object -ExpandProperty Definition
+}

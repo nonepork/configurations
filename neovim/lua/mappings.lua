@@ -53,10 +53,19 @@ vim.keymap.set('n', '<C-right>', '3<C-w>>', { desc = 'Increase horizontal window
 function SmartBufDelete()
   local buf = vim.api.nvim_get_current_buf()
   local buftype = vim.bo[buf].buftype
-  if buftype == 'help' or buftype == 'terminal' then
+  local tab_count = vim.fn.tabpagenr '$'
+  local win_count = vim.fn.winnr '$'
+
+  if buftype == 'help' or buftype == 'terminal' or buftype == 'health' then
     vim.cmd 'bd'
+    if win_count == 1 and tab_count > 1 then
+      vim.cmd 'tabclose'
+    end
   else
     vim.cmd 'lua MiniBufremove.delete(0, true)'
+    if win_count == 1 and tab_count > 1 then
+      vim.cmd 'tabclose'
+    end
   end
 end
 
