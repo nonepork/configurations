@@ -31,7 +31,7 @@ $env:PYTHONIOENCODING='utf-8'
 New-Alias -Name vim -Value nvim
 
 function clearch() {
-  Remove-Item -path (Get-PSReadlineOption).HistorySavePath
+    Remove-Item -path (Get-PSReadlineOption).HistorySavePath
 }
 
 function icat {
@@ -43,8 +43,8 @@ function icat {
 }
 
 function vsenv {
-    $vsToolsPath = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
-    $instanceId = "a3bf19de"
+    $vsToolsPath = "C:\Program Files\Microsoft Visual Studio\18\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+    $instanceId = "a748d57a"
 
     if (-Not (Test-Path $vsToolsPath)) {
         Write-Error "DevShell module not found at: $vsToolsPath"
