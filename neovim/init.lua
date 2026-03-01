@@ -1,3 +1,7 @@
+-- TODO: update and refactor your configs, see https://chatgpt.com/c/699d9613-9fe4-8320-8d30-0aabc292b6f8
+-- and https://www.youtube.com/watch?v=fFHlfbKVi30
+-- make each plugins a individual file rather than a big list
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true

@@ -1,3 +1,5 @@
+---@type blink.cmp.Config
+---@diagnostic disable missing-fields
 return {
   enabled = function()
     return not vim.snippet.active() -- Don't show when in snippet mode
@@ -35,9 +37,10 @@ return {
 
   sources = {
     -- default = { 'lsp', 'path', 'snippets', 'lazydev' },
-    default = { 'copilot', 'lsp', 'path', 'snippets', 'lazydev', 'buffer' },
+    default = { 'copilot', 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
     providers = {
       lazydev = {
+        name = 'LazyDev',
         module = 'lazydev.integrations.blink',
         score_offset = 100,
       },

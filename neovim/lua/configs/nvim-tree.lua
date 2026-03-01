@@ -41,6 +41,10 @@ return {
   update_focused_file = {
     enable = true,
   },
+  filters = {
+    git_ignored = false,
+    dotfiles = true,
+  },
   renderer = {
     root_folder_label = false,
     icons = {

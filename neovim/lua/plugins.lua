@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 require('lazy').setup({
   {
     'NMAC427/guess-indent.nvim',
@@ -11,6 +13,7 @@ require('lazy').setup({
 
   {
     'nvim-telescope/telescope.nvim',
+    enabled = true,
     event = 'VimEnter',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -34,14 +37,20 @@ require('lazy').setup({
   },
 
   {
+    'mason-org/mason.nvim',
+    cmd = { 'Mason' },
+    opts = {},
+  },
+
+  {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      { 'mason-org/mason.nvim', opts = {} },
+      'mason-org/mason.nvim',
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-
       { 'j-hui/fidget.nvim', opts = require 'configs.fidget' },
+      'saghen/blink.cmp',
     },
     config = require 'configs.lspconfig',
   },
@@ -90,8 +99,6 @@ require('lazy').setup({
       'folke/lazydev.nvim',
       'fang2hou/blink-copilot',
     },
-    --- @module 'blink.cmp'
-    --- @type blink.cmp.Config
     opts = require 'configs.blink',
   },
 
@@ -105,6 +112,9 @@ require('lazy').setup({
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
+    ---@module 'todo-comments'
+    ---@type TodoOptions
+    ---@diagnostic disable-next-line: missing-fields
     opts = { signs = false },
   },
 
@@ -115,38 +125,20 @@ require('lazy').setup({
 
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    branch = 'main',
     dependencies = {
       'MeanderingProgrammer/render-markdown.nvim',
-      config = function()
-        require('render-markdown').setup {
-          code = {
-            border = 'thick',
-          },
-        }
-      end,
+      config = require 'configs.markdown',
     },
-    build = ':TSUpdate',
-    main = 'nvim-treesitter.configs',
-    lazy = false,
     opts = require 'configs.treesitter',
   },
 
   {
     'nvim-tree/nvim-tree.lua',
     version = '*',
-    cmd = { 'NvimTreeToggle', 'NvimTreeFindFile' },
-    init = function()
-      local arg = vim.fn.argv(0)
-      local stat = vim.loop.fs_stat(arg or '')
-      if stat and stat.type == 'directory' then
-        vim.api.nvim_create_autocmd('VimEnter', {
-          once = true,
-          callback = function()
-            require('nvim-tree.api').tree.open()
-          end,
-        })
-      end
-    end,
+    lazy = false,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -157,14 +149,12 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     main = 'ibl',
-    ---@module "ibl"
-    ---@type ibl.config
     opts = require 'configs.blankline',
   },
 
   {
     'catgoose/nvim-colorizer.lua',
-    event = { 'BufReadPost', 'BufNewFile' },
+    event = { 'BufReadPre' },
     opts = require 'configs.colorizer',
   },
 
@@ -188,6 +178,12 @@ require('lazy').setup({
   {
     'windwp/nvim-ts-autotag',
     event = 'InsertEnter',
+    opts = {},
+  },
+
+  {
+    'TobinPalmer/rayso.nvim',
+    cmd = { 'Rayso' },
     opts = {},
   },
 }, {

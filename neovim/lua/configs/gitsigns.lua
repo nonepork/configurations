@@ -1,3 +1,5 @@
+---@type Gitsigns.Config
+---@diagnostic disable: missing-fields
 return {
   on_attach = function(bufnr)
     local gitsigns = require 'gitsigns'
@@ -51,8 +53,8 @@ return {
   end,
 
   signs = {
-    add = { text = '+' },
-    change = { text = '~' },
+    add = { text = '|' },
+    change = { text = '|' },
     delete = { text = '_' },
     topdelete = { text = '‾' },
     changedelete = { text = '~' },

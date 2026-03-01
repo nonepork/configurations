@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-doc-name
+---@type ibl.config
 return {
   indent = { char = '│', tab_char = '│' },
   exclude = { -- Stole from rezhaTanuharja
