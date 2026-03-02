@@ -7,7 +7,6 @@ return {
     'javascript',
     'typescript',
     'html',
-    'lua',
     'json',
     'yaml',
   },

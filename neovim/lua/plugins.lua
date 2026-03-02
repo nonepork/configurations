@@ -24,7 +24,8 @@ require('lazy').setup({
           return vim.fn.executable 'make' == 1
         end,
       },
-      { 'nvim-telescope/telescope-ui-select.nvim' },
+      'nvim-telescope/telescope-ui-select.nvim',
+      'catgoose/telescope-helpgrep.nvim',
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = require 'configs.telescope',
@@ -38,7 +39,7 @@ require('lazy').setup({
 
   {
     'mason-org/mason.nvim',
-    cmd = { 'Mason' },
+    cmd = { 'Mason', 'MasonInstall', 'MasonUpdate' },
     opts = {},
   },
 
@@ -132,7 +133,7 @@ require('lazy').setup({
       'MeanderingProgrammer/render-markdown.nvim',
       config = require 'configs.markdown',
     },
-    opts = require 'configs.treesitter',
+    config = require 'configs.treesitter',
   },
 
   {
