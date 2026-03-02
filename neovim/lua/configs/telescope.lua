@@ -4,6 +4,16 @@ return function()
       ['ui-select'] = {
         require('telescope.themes').get_dropdown(),
       },
+      helpgrep = {
+        ignore_paths = {
+          vim.fn.stdpath 'state' .. '/lazy/readme',
+        },
+        mappings = {
+          i = {
+            ['<C-v>'] = require('telescope.actions').select_vertical,
+          },
+        },
+      },
     },
     pickers = {
       help_tags = {
@@ -18,9 +28,10 @@ return function()
 
   pcall(require('telescope').load_extension, 'fzf')
   pcall(require('telescope').load_extension, 'ui-select')
+  pcall(require('telescope').load_extension, 'helpgrep')
 
   local builtin = require 'telescope.builtin'
-  vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
+  vim.keymap.set('n', '<leader>fh', '<cmd>Telescope helpgrep<CR>', { desc = '[F]ind [H]elp via grep' })
   vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
   vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
   vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })

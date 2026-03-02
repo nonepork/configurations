@@ -1,6 +1,31 @@
 return function()
   -- NOTE: uncomment those lines to install parsers on startup, or use `:TSInstall <language>` to install them manually
-  -- local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+
+  -- local parsers = {
+  --   'bash',
+  --   'c',
+  --   'diff',
+  --   'html',
+  --   'javascript',
+  --   'jsdoc',
+  --   'json',
+  --   'lua',
+  --   'luadoc',
+  --   'luap',
+  --   'markdown',
+  --   'markdown_inline',
+  --   'printf',
+  --   'python',
+  --   'query',
+  --   'regex',
+  --   'toml',
+  --   'tsx',
+  --   'typescript',
+  --   'vim',
+  --   'vimdoc',
+  --   'xml',
+  --   'yaml',
+  -- }
   -- require('nvim-treesitter').install(parsers)
   vim.api.nvim_create_autocmd('FileType', {
     callback = function(args)

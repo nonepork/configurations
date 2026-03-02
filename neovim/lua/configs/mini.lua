@@ -1,6 +1,6 @@
 return function()
   require('mini.ai').setup { n_lines = 500 }
-  require('mini.pairs').setup()
+  require('mini.pairs').setup { modes = { insert = true, command = false, terminal = false }, skip_unbalanced = true, markdown = true }
   require('mini.surround').setup()
   require('mini.bufremove').setup()
 

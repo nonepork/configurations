@@ -1,14 +1,11 @@
+---@module 'colorizer' colorizer
 ---@type colorizer.SetupOptions
 ---@diagnostic disable missing-fields
 return {
-  buftype = {
-    'css',
-    'scss',
-    'javascript',
-    'typescript',
-    'html',
-    'json',
-    'yaml',
+  filetypes = {
+    '*',
+    '!mason',
+    '!markdown',
   },
   lazy_load = true,
   options = {
