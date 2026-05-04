@@ -36,16 +36,14 @@
   "linkgroups": {
     "on": false,
     "selected": "default",
-    "groups": [
-      "default"
-    ],
+    "groups": ["default"],
     "pinned": [],
     "synced": []
   },
   "backgrounds": {
     "type": "images",
     "fadein": 600,
-    "blur": 15,
+    "blur": 1,
     "bright": 0.8,
     "frequency": "hour",
     "color": "#185A63",
@@ -110,7 +108,7 @@
     "type": "classic",
     "frequency": "day",
     "author": true,
-    "last": 1772209547102
+    "last": 1777827225787
   },
   "pomodoro": {
     "on": false,
@@ -130,13 +128,7 @@
     "size": "14",
     "family": "Zen Maru Gothic",
     "system": false,
-    "weightlist": [
-      "300",
-      "400",
-      "500",
-      "700",
-      "900"
-    ],
+    "weightlist": ["300", "400", "500", "700", "900"],
     "weight": "400"
   },
   "supporters": {
@@ -149,37 +141,8 @@
     "layouts": {
       "single": {
         "items": {},
-        "grid": [
-          [
-            "main"
-          ],
-          [
-            "quicklinks"
-          ]
-        ]
+        "grid": [["main"], ["quicklinks"]]
       }
-    }
-  },
-  "linkspirlfg": {
-    "_id": "linkspirlfg",
-    "parent": "default",
-    "order": 5,
-    "title": "",
-    "url": "https://www.notion.so/the-game-is-on/6a4864b969cb4fc3913d6867bf970ddd?v=bf4ad8ca3bfb4138b8cc217362d3a63c",
-    "icon": {
-      "type": "auto",
-      "value": "https://services.bonjourr.fr/favicon/blob/https://www.notion.so/the-game-is-on/6a4864b969cb4fc3913d6867bf970ddd?v=bf4ad8ca3bfb4138b8cc217362d3a63c?r=1771859952901"
-    }
-  },
-  "linksghfrhi": {
-    "_id": "linksghfrhi",
-    "parent": "default",
-    "order": 2,
-    "title": "",
-    "url": "https://discord.com/channels/@me",
-    "icon": {
-      "type": "auto",
-      "value": "https://services.bonjourr.fr/favicon/blob/https://discord.com/channels/@me?r=1771859945334"
     }
   },
   "linksjhlhgl": {
@@ -191,6 +154,28 @@
     "icon": {
       "type": "auto",
       "value": "https://services.bonjourr.fr/favicon/blob/https://www.youtube.com?r=1771859948925"
+    }
+  },
+  "linksghfrhi": {
+    "_id": "linksghfrhi",
+    "parent": "default",
+    "order": 2,
+    "title": "",
+    "url": "https://discord.com/channels/@me",
+    "icon": {
+      "type": "auto",
+      "value": "https://services.bonjourr.fr/favicon/blob/https://discord.com/channels/@me?r=1775130219971"
+    }
+  },
+  "linksqdfqno": {
+    "_id": "linksqdfqno",
+    "parent": "default",
+    "order": 1,
+    "title": "",
+    "url": "https://www.facebook.com/messages/",
+    "icon": {
+      "type": "auto",
+      "value": "https://services.bonjourr.fr/favicon/blob/https://www.facebook.com/messages/?r=1771859946682"
     }
   },
   "linkspdeiod": {
@@ -215,15 +200,16 @@
       "value": "https://services.bonjourr.fr/favicon/blob/https://claude.ai/?r=1771859951645"
     }
   },
-  "linksqdfqno": {
-    "_id": "linksqdfqno",
+  "linkspirlfg": {
+    "_id": "linkspirlfg",
     "parent": "default",
-    "order": 1,
+    "order": 5,
     "title": "",
-    "url": "https://www.facebook.com/messages/",
+    "url": "https://www.notion.so/the-game-is-on/6a4864b969cb4fc3913d6867bf970ddd?v=bf4ad8ca3bfb4138b8cc217362d3a63c",
     "icon": {
       "type": "auto",
-      "value": "https://services.bonjourr.fr/favicon/blob/https://www.facebook.com/messages/?r=1771859946682"
+      "value": "https://services.bonjourr.fr/favicon/blob/https://www.notion.so/the-game-is-on/6a4864b969cb4fc3913d6867bf970ddd?v=bf4ad8ca3bfb4138b8cc217362d3a63c?r=1771859952901"
     }
   }
 }
+
