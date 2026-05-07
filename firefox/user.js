@@ -10,14 +10,9 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 149                                                             *
+ * version: 150                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
  ****************************************************************************/
-
-/****************************************************************************
- * SECTION: FASTFOX                                                         *
- ****************************************************************************/
-user_pref("gfx.canvas.accelerated.cache-size", 256); // reset pref
 
 /****************************************************************************
  * SECTION: SECUREFOX                                                       *
@@ -212,6 +207,12 @@ user_pref("browser.tabs.loadInBackground", true);
 
 // PREF: Don't show options when alt is pressed
 user_pref("ui.key.menuAccessKeyFocuses", false);
+
+// PREF: Private theme stuff
+user_pref("browser.privatebrowsing.felt-privacy-v1", true);
+
+// PREF: Enable about:config warning
+user_pref("browser.aboutConfig.showWarning", true);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
