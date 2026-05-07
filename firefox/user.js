@@ -208,9 +208,6 @@ user_pref("browser.tabs.loadInBackground", true);
 // PREF: Don't show options when alt is pressed
 user_pref("ui.key.menuAccessKeyFocuses", false);
 
-// PREF: Private theme stuff
-user_pref("browser.privatebrowsing.felt-privacy-v1", true);
-
 // PREF: Enable about:config warning
 user_pref("browser.aboutConfig.showWarning", true);
 
