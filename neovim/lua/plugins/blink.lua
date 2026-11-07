@@ -47,7 +47,7 @@ require('blink.cmp').setup {
   },
 
   sources = {
-    default = { 'lazydev', 'lsp', 'path', 'snippets' },
+    default = { 'copilot', 'lazydev', 'lsp', 'path', 'snippets' },
     -- NOTE: why isn't buffer used?
     providers = {
       lazydev = {
@@ -55,6 +55,12 @@ require('blink.cmp').setup {
         module = 'lazydev.integrations.blink',
         -- make lazydev completions top priority (see `:h blink.cmp`)
         score_offset = 100,
+      },
+      copilot = {
+        name = 'copilot',
+        module = 'blink-copilot',
+        score_offset = 101,
+        async = true,
       },
     },
   },
