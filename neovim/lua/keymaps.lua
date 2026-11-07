@@ -69,6 +69,37 @@ vim.keymap.set('n', '<leader>gi', '<cmd>GuessIndent<CR>', { desc = '[G]uess [I]n
 -- NOTE: the K thingy seems to be built-in, so I just use ]d [d to show errors now, gotta
 -- figure out a way to copy the errors though.
 
+-- diffmode stuff for myself, jumps to add/delete only
+local function jump_diff(direction)
+  local line = vim.fn.line '.'
+  local last_line = vim.fn.line '$'
+  local step = direction == 'next' and 1 or -1
+
+  local function get_diff_type(l)
+    if l < 1 or l > last_line + 1 then return nil end
+    if vim.fn.diff_filler(l) > 0 then return 'del' end
+    local hl_id = vim.fn.diff_hlID(l, 1)
+    if hl_id > 0 and vim.fn.synIDattr(hl_id, 'name') == 'DiffAdd' then return 'add' end
+    return nil
+  end
+
+  while true do
+    line = line + step
+    if line < 1 or line > last_line + 1 then break end
+
+    local kind = get_diff_type(line)
+    -- Stop at any deletion filler, or at the first line of an addition block
+    if kind == 'del' or (kind == 'add' and get_diff_type(line - 1) ~= 'add') then
+      vim.api.nvim_win_set_cursor(0, { math.min(line, last_line), 0 })
+      return
+    end
+  end
+  print 'No more add/delete found'
+end
+
+vim.keymap.set('n', ']a', function() jump_diff 'next' end, { desc = 'Jump to next diffmode add/delete' })
+vim.keymap.set('n', '[a', function() jump_diff 'prev' end, { desc = 'Jump to previous diffmode add/delete' })
+
 -- [[ Editorconfig custom properties ]]
 local ok, editorconfig = pcall(require, 'editorconfig')
 if ok then editorconfig.properties.commentstring = function(bufnr, val) vim.bo[bufnr].commentstring = val end end
